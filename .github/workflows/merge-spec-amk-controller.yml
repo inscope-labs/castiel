@@ -1,0 +1,23 @@
+name: merge-spec-amk-controller
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "pr = open or update a pull request; commit = push to this branch"
+        type: choice
+        options:
+          - pr
+          - commit
+        default: pr
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  merge:
+    uses: ./.github/workflows/merge-spec.yml
+    with:
+      spec_dir: specs/core/amk-controller
+      mode: ${{ inputs.mode || 'pr' }}

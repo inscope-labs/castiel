@@ -1,0 +1,57 @@
+{
+  "id": "10008-7-206-00",
+  "title": "Write the controller, prompt and runtime test vectors",
+  "stage": "7-2",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Provides vectors in the framework format covering valid, malformed, expired, revoked and replayed cases for the controller, prompt and runtime.",
+    "Every vector cites the clause IDs it exercises and no vector contradicts a clause."
+  ],
+  "deliverables": [
+    "amk/conformance/test-vectors/controller.md",
+    "amk/conformance/test-vectors/prompt.md",
+    "amk/conformance/test-vectors/runtime.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "task",
+      "ref": "10008-7-204-00"
+    }
+  ],
+  "spec_refs": [],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

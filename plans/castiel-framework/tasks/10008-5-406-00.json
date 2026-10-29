@@ -1,0 +1,65 @@
+{
+  "id": "10008-5-406-00",
+  "title": "Prompt: authority, behaviour and surface-map conduct",
+  "stage": "5-4",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Changes are limited to the listed files; every existing clause ID is preserved and new clauses take the next free ordinal in their file.",
+    "Every change is traceable to a cited open item or to a named kernel/protocol document, recorded under Spec references in the report.",
+    "Aligns with the agent-interface, error-handling and operating-levels documents; states the interaction of the optional session validation layer with automatic assistance."
+  ],
+  "deliverables": [
+    "amk/components/amk-prompt/04-authority-capability.md",
+    "amk/components/amk-prompt/05-behavior-failure.md",
+    "amk/components/amk-prompt/06-htsm-conduct.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/04-authority-capability.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/05-behavior-failure.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/06-htsm-conduct.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "10008-5-303-00",
+  "title": "Controller: surface and runtime, work and capability",
+  "stage": "5-3",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Changes are limited to the listed files; every existing clause ID is preserved and new clauses take the next free ordinal in their file.",
+    "Every change is traceable to a cited open item or to a named kernel/protocol document, recorded under Spec references in the report.",
+    "Resolves CTR-O-04 (provenance binding of the runtime map), or records a deferral permitted by D-10.",
+    "Aligns with the work-order lifecycle and the operating-levels documents."
+  ],
+  "deliverables": [
+    "amk/components/amk-controller/04-surface-runtime.md",
+    "amk/components/amk-controller/05-work-preauth-capability.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "CTR-O-04"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/04-surface-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/05-work-preauth-capability.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

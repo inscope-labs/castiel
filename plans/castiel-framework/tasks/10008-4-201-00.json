@@ -1,0 +1,63 @@
+{
+  "id": "10008-4-201-00",
+  "title": "Specify the package manifest",
+  "stage": "4-2",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines the package manifest: identity, version, digests, prompt content references, declared capabilities and size limits.",
+    "Defines what a console verifies at registration.",
+    "Resolves RTM-O-11 and RTM-O-14, or records deferrals permitted by D-10."
+  ],
+  "deliverables": [
+    "amk/package-framework/package-manifest/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:package-framework/package-manifest",
+    "RTM-O-11",
+    "RTM-O-14"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/01-package-format.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/02-contract.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

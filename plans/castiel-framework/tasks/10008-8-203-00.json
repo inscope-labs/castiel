@@ -1,0 +1,57 @@
+{
+  "id": "10008-8-203-00",
+  "title": "Write the security policy",
+  "stage": "8-2",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Describes how to report a weakness in the framework and what response to expect, consistent with D-05.",
+    "Contains no contact detail that has not been supplied by the operator."
+  ],
+  "deliverables": [
+    "amk/SECURITY.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "decision",
+      "ref": "D-05"
+    }
+  ],
+  "spec_refs": [
+    "SCF:amk/SECURITY"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "10008-2-104-00",
+  "title": "Consolidate the kernel invariants",
+  "stage": "2-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Lists the kernel-wide invariants as numbered clauses, each citing the component clauses it derives from.",
+    "Introduces no new behaviour: any invariant with no source clause is flagged in Findings as a proposal.",
+    "Covers fail-closed behaviour, no implicit action, no Host AI possession of capability material and single enforcement point.",
+    "Has no contradiction with the SSOT."
+  ],
+  "deliverables": [
+    "amk/abstract-kernel/invariants/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "task",
+      "ref": "10008-2-102-00"
+    },
+    {
+      "type": "task",
+      "ref": "10008-2-103-00"
+    }
+  ],
+  "spec_refs": [
+    "SCF:abstract-kernel/invariants"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

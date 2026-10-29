@@ -1,0 +1,60 @@
+{
+  "id": "10008-5-302-00",
+  "title": "Controller: envelope interface and console identity",
+  "stage": "5-3",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Changes are limited to the listed files; every existing clause ID is preserved and new clauses take the next free ordinal in their file.",
+    "Every change is traceable to a cited open item or to a named kernel/protocol document, recorded under Spec references in the report.",
+    "Aligns with the envelope model, its catalog and the identity document."
+  ],
+  "deliverables": [
+    "amk/components/amk-controller/02-envelope-interface.md",
+    "amk/components/amk-controller/03-console-identity.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/02-envelope-interface.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/03-console-identity.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

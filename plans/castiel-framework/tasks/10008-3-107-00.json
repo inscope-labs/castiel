@@ -1,0 +1,53 @@
+{
+  "id": "10008-3-107-00",
+  "title": "Specify error handling",
+  "stage": "3-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines the error model: categories, the structure of an error report and the mapping from failure to fail-closed behaviour.",
+    "Defines the standard error codes visible to consoles and to the Host AI, as a catalogue with stable identifiers.",
+    "States what detail an error may disclose."
+  ],
+  "deliverables": [
+    "amk/runtime-system-protocols/error-handling/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:runtime-system-protocols/error-handling"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

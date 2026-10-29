@@ -1,0 +1,25 @@
+{
+  "id": "10008-9-205-00",
+  "title": "Regenerate the merged specifications",
+  "stage": "9-2",
+  "executor": "operator",
+  "status": "planned",
+  "acceptance": [
+    "The operator regenerates every *-spec-full.md through the merge tooling after the tooling paths are fixed, and verifies each merged file matches its sections.",
+    "No merged file is edited by hand."
+  ],
+  "deliverables": [],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "decision",
+      "ref": "D-03"
+    }
+  ],
+  "spec_refs": [],
+  "context": [],
+  "verify": {
+    "method": "manual"
+  },
+  "summary": "Tooling is code and is outside this Markdown-only plan; the operator handles it per D-03."
+}

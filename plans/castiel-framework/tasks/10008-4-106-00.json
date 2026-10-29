@@ -1,0 +1,52 @@
+{
+  "id": "10008-4-106-00",
+  "title": "Specify release and update",
+  "stage": "4-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines release signing expectations, anti-rollback requirements and update flagging as mandatory or advisory.",
+    "Is consistent with the release manifest and the package lifecycle."
+  ],
+  "deliverables": [
+    "amk/cross-cutting-requirements/release-and-update/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:cross-cutting-requirements/release-and-update"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

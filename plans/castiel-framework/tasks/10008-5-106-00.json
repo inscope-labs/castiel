@@ -1,0 +1,86 @@
+{
+  "id": "10008-5-106-00",
+  "title": "Authority: closure",
+  "stage": "5-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Changes are limited to the listed files; every existing clause ID is preserved and new clauses take the next free ordinal in their file.",
+    "Every change is traceable to a cited open item or to a named kernel/protocol document, recorded under Spec references in the report.",
+    "Updates every authority open item to resolved, deferred (with rationale and owner per D-10) or retired.",
+    "Writes the component README as the reading guide and the signing backend extension point as an extension-point specification consistent with the backend extension model."
+  ],
+  "deliverables": [
+    "amk/components/amk-authority/99-open-items.md",
+    "amk/components/amk-authority/README.md",
+    "amk/components/amk-authority/signing-backend-extension-point/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "task",
+      "ref": "10008-5-101-00"
+    },
+    {
+      "type": "task",
+      "ref": "10008-5-102-00"
+    },
+    {
+      "type": "task",
+      "ref": "10008-5-103-00"
+    },
+    {
+      "type": "task",
+      "ref": "10008-5-104-00"
+    },
+    {
+      "type": "task",
+      "ref": "10008-5-105-00"
+    },
+    {
+      "type": "decision",
+      "ref": "D-10"
+    }
+  ],
+  "spec_refs": [
+    "SCF:components/amk-authority",
+    "SCF:components/amk-authority/signing-backend-extension-point"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/99-open-items.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

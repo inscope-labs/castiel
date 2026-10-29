@@ -1,0 +1,74 @@
+{
+  "id": "10008-3-102-00",
+  "title": "Specify the envelope model",
+  "stage": "3-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines the common envelope structure and fields (including contract_version and ttl), signing rules and replay protection.",
+    "Assigns each envelope type to the administrative or session channel and defines router payload encapsulation.",
+    "Defines unknown-field and unknown-type handling.",
+    "Resolves CNS-O-08 and CTR-O-11, or records deferrals permitted by D-10."
+  ],
+  "deliverables": [
+    "amk/runtime-system-protocols/envelope-model/README.md",
+    "amk/runtime-system-protocols/envelope-model/00-common-fields.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "task",
+      "ref": "10008-3-101-00"
+    }
+  ],
+  "spec_refs": [
+    "SCF:runtime-system-protocols/envelope-model",
+    "CNS-O-08",
+    "CTR-O-11"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/02-envelope-interface.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/02-envelope-interface.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/03-channel-envelope.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

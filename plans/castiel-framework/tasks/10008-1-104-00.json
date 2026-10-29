@@ -1,0 +1,59 @@
+{
+  "id": "10008-1-104-00",
+  "title": "Write the repository agent rules",
+  "stage": "1-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "States that castiel is abstract-only, that no implementation code may appear anywhere in it, and that implementations fork it and live outside amk/.",
+    "Lists the files an agent must read before any task, the ID and immutability rules, the platform/language neutrality rule and the rule never to edit generated *-spec-full.md files.",
+    "Defines how design proposals (DP-nn) and open questions are recorded, and that each task is executed on its own branch with its own pull request.",
+    "Contains no tooling instructions that depend on a specific platform or language."
+  ],
+  "deliverables": [
+    "amk/AGENTS.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "task",
+      "ref": "10008-1-101-00"
+    }
+  ],
+  "spec_refs": [
+    "SCF:amk/AGENTS"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

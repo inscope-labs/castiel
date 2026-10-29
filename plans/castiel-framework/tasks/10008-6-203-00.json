@@ -1,0 +1,76 @@
+{
+  "id": "10008-6-203-00",
+  "title": "Specify the Standard platform profile",
+  "stage": "6-2",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines the standard tier by the platform capabilities it requires and the component-profile clauses that apply at this tier.",
+    "The requirements document lists every obligation that differs from the neighbouring tier, by clause ID.",
+    "Is consistent with the profile files of the five components."
+  ],
+  "deliverables": [
+    "amk/implementation-specification/platform-profiles/standard/README.md",
+    "amk/implementation-specification/platform-profiles/standard/profile-requirements/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "task",
+      "ref": "10008-6-201-00"
+    }
+  ],
+  "spec_refs": [
+    "SCF:implementation-specification/platform-profiles/standard",
+    "SCF:implementation-specification/platform-profiles/standard/profile-requirements"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/06-profiles.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/06-profiles.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/07-profiles.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/07-profiles.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

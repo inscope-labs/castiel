@@ -1,0 +1,62 @@
+{
+  "id": "10008-3-204-00",
+  "title": "Specify the work-order lifecycle",
+  "stage": "3-2",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines work-order states and transitions, quotas and constraints, extension, renewal and cancellation.",
+    "Distinguishes console-originated from Host-AI-originated work orders and their authorization.",
+    "Defines the cost unit and concurrency limits, resolving CTR-O-09, or records a deferral permitted by D-10."
+  ],
+  "deliverables": [
+    "amk/runtime-system-protocols/work-order-lifecycle/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:runtime-system-protocols/work-order-lifecycle",
+    "CTR-O-09"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/04-runtimes-work-preauth.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/05-work-preauth-capability.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "10008-3-203-00",
+  "title": "Specify authorization",
+  "stage": "3-2",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines operator authorization flows and the multi-scope pre-authorization envelope: scopes, expiry, quotas, level cap, runtime and version binding.",
+    "Lists the actions that always require a fresh strong confirmation and states that a failed validation gate can never be overridden.",
+    "Defines the anomaly-level scale (Normal, Elevated, High), who decides it, and the conditions under which a session may continue while the console is unreachable (automatic assistance, a covering pre-authorization, and the level the operator allows).",
+    "Resolves CNS-O-05 and CNS-O-06, or records deferrals permitted by D-10."
+  ],
+  "deliverables": [
+    "amk/runtime-system-protocols/authorization/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:runtime-system-protocols/authorization",
+    "CNS-O-05",
+    "CNS-O-06"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/04-runtimes-work-preauth.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/05-validation-revocation.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

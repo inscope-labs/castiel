@@ -1,0 +1,51 @@
+{
+  "id": "10008-9-104-00",
+  "title": "Audit platform and language neutrality",
+  "stage": "9-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Lists every file reviewed and every passage that names a platform, vendor, language or product, with a verdict and a recommended wording.",
+    "Includes the session-router overview and conformance section.",
+    "Any passage needing correction is listed so the operator can add tasks."
+  ],
+  "deliverables": [
+    "amk/reference-material/architecture-decisions/platform-neutrality-audit.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

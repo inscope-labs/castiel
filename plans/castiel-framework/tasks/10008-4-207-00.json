@@ -1,0 +1,62 @@
+{
+  "id": "10008-4-207-00",
+  "title": "Specify the session-memory system package",
+  "stage": "4-2",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines session-memory: a durable copy of all context linked through the surface map and an optional context-memory interface for the Host AI.",
+    "Defines the adapter model: the component is the mechanism and adapters are the gateway to storage.",
+    "Defines the surface-map commands through which assets are consumed, and their authorization."
+  ],
+  "deliverables": [
+    "amk/package-framework/system-runtime-packages/session-memory/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "task",
+      "ref": "10008-4-205-00"
+    }
+  ],
+  "spec_refs": [
+    "SCF:package-framework/system-runtime-packages/session-memory"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/06-system-packages.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

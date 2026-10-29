@@ -1,0 +1,61 @@
+{
+  "id": "10008-3-205-00",
+  "title": "Specify the agent interface",
+  "stage": "3-2",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines how a Host AI interacts: through prompts and the surface map only, with the surface map as the baseline channel.",
+    "Defines the baseline request pattern abstractly and the Host AI adapter model for the session router.",
+    "States that other channels exist only as permitted by the kernel operating level."
+  ],
+  "deliverables": [
+    "amk/runtime-system-protocols/agent-interface/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:runtime-system-protocols/agent-interface"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/06-htsm-conduct.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/05-adapters.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

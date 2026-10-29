@@ -1,0 +1,70 @@
+{
+  "id": "10008-5-401-00",
+  "title": "Runtime: foundations, package format and contract",
+  "stage": "5-4",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Changes are limited to the listed files; every existing clause ID is preserved and new clauses take the next free ordinal in their file.",
+    "Every change is traceable to a cited open item or to a named kernel/protocol document, recorded under Spec references in the report.",
+    "Resolves RTM-O-12 (in-band API wire format, transport, timeouts and error catalogue reference), RTM-O-01 and RTM-O-03, or records deferrals permitted by D-10.",
+    "Aligns with the package manifest, capability model and error-handling documents."
+  ],
+  "deliverables": [
+    "amk/components/amk-runtime/00-foundations.md",
+    "amk/components/amk-runtime/01-package-format.md",
+    "amk/components/amk-runtime/02-contract.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "RTM-O-12",
+    "RTM-O-01",
+    "RTM-O-03"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/00-foundations.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/01-package-format.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/02-contract.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

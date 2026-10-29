@@ -1,0 +1,57 @@
+{
+  "id": "10008-7-203-00",
+  "title": "Specify the harness interface",
+  "stage": "7-2",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines the abstract interface between a conformance harness and an implementation under test, in language-neutral terms.",
+    "Contains no harness implementation, example code or tool names."
+  ],
+  "deliverables": [
+    "amk/conformance/harness-interface/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "task",
+      "ref": "10008-7-201-00"
+    }
+  ],
+  "spec_refs": [
+    "SCF:conformance/harness-interface"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

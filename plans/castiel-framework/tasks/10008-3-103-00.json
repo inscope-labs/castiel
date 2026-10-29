@@ -1,0 +1,71 @@
+{
+  "id": "10008-3-103-00",
+  "title": "Specify the session envelope catalog",
+  "stage": "3-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines field tables for Genesis, TurnReceipt, session policy and check-in envelopes: required fields, types, constraints, signer and channel.",
+    "States validity rules and the failure behaviour for each.",
+    "Resolves CNS-O-09 and CTR-O-12, or records deferrals permitted by D-10."
+  ],
+  "deliverables": [
+    "amk/runtime-system-protocols/envelope-model/01-session-envelopes.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "task",
+      "ref": "10008-3-102-00"
+    }
+  ],
+  "spec_refs": [
+    "CNS-O-09",
+    "CTR-O-12"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/02-envelope-interface.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/03-session-lifecycle.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/02-envelope-interface.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

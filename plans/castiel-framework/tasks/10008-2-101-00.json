@@ -1,0 +1,55 @@
+{
+  "id": "10008-2-101-00",
+  "title": "Specify the canonical data model",
+  "stage": "2-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines language-neutral primitives (identifiers, timestamps, binary values, integers) and their canonical text forms.",
+    "Defines canonical serialization and the exact input to hashes and signatures, so two independent implementations produce identical bytes.",
+    "Defines extensibility: unknown-field handling, versioning fields and ordering rules.",
+    "Resolves RTM-O-13 (canonical serialization and hash) or records a deferral permitted by D-10."
+  ],
+  "deliverables": [
+    "amk/abstract-kernel/canonical-data-model/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:abstract-kernel/canonical-data-model",
+    "RTM-O-13"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

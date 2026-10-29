@@ -1,0 +1,60 @@
+{
+  "id": "10008-8-202-00",
+  "title": "Write the contribution guide",
+  "stage": "8-2",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Describes how to propose a change, the one-task-one-branch-one-PR rule, the Markdown-only rule and the ID rules, consistent with D-05."
+  ],
+  "deliverables": [
+    "amk/CONTRIBUTING.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "task",
+      "ref": "10008-8-201-00"
+    },
+    {
+      "type": "decision",
+      "ref": "D-05"
+    }
+  ],
+  "spec_refs": [
+    "SCF:amk/CONTRIBUTING"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

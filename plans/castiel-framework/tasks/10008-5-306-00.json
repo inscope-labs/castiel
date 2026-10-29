@@ -1,0 +1,54 @@
+{
+  "id": "10008-5-306-00",
+  "title": "Controller: policy engine and audit sink extension points",
+  "stage": "5-3",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Specifies each extension point (contract boundary, trust assumptions, failure behaviour, conformance claim) consistently with the backend extension model.",
+    "Aligns the policy-engine obligations with the policy-expression document and the audit-sink obligations with the observability requirements."
+  ],
+  "deliverables": [
+    "amk/components/amk-controller/policy-engine-extension-point/README.md",
+    "amk/components/amk-controller/audit-sink-extension-point/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:components/amk-controller/policy-engine-extension-point",
+    "SCF:components/amk-controller/audit-sink-extension-point"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

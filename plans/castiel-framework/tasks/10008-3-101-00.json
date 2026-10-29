@@ -1,0 +1,58 @@
+{
+  "id": "10008-3-101-00",
+  "title": "Write the versioning policy",
+  "stage": "3-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines the suite version, how component versions relate to it and how contract_version derives from the suite major.minor.",
+    "Defines what counts as a breaking change and the rules for deprecation and retirement.",
+    "Is consistent with the decision recorded in D-06."
+  ],
+  "deliverables": [
+    "amk/versioning/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "decision",
+      "ref": "D-06"
+    }
+  ],
+  "spec_refs": [
+    "SCF:versioning"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

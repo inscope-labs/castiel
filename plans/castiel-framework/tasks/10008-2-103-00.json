@@ -1,0 +1,59 @@
+{
+  "id": "10008-2-103-00",
+  "title": "Specify the authority model",
+  "stage": "2-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Separates attestation, authentication, authorization and enforcement and states which component owns each.",
+    "Defines delegation and bounded standing authority (the pre-authorization envelope) at the model level.",
+    "Defines that the console is the sole representative of the operator and that there is no user entity in the system.",
+    "Cites the component clauses each statement derives from."
+  ],
+  "deliverables": [
+    "amk/abstract-kernel/authority-model/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "task",
+      "ref": "10008-2-102-00"
+    }
+  ],
+  "spec_refs": [
+    "SCF:abstract-kernel/authority-model"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

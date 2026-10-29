@@ -1,0 +1,33 @@
+{
+  "plan_id": "castiel-framework",
+  "title": "Castiel framework completion",
+  "plan_number": "10008",
+  "deliverable_roots": [
+    "amk/",
+    "README.md"
+  ],
+  "deliverable_patterns": [
+    "\\.md$",
+    "(^|/)VERSION$",
+    "(^|/)COMPLIANCE_MAPPINGS_VERSION$"
+  ],
+  "order_rules": [
+    "castiel is an abstract framework repository: write specifications only. No implementation code, no pseudo-code, no commands, no library or product names.",
+    "Deliverables are Markdown (plus the two plain-text version files where named). Illustrative data may appear only as clearly labelled informative field tables or examples, never as program logic.",
+    "Every normative statement is one numbered clause with a unique ID of the form PREFIX-file:rule, as in the existing component specs. Never reuse or renumber an existing ID; mark withdrawn clauses RETIRED.",
+    "Use MUST, SHOULD and MAY (RFC 2119 / RFC 8174) only inside normative clauses. User interface is an implementation concern: at most a normative SHOULD.",
+    "Be platform- and language-agnostic: name no cloud provider, operating system, programming language or product.",
+    "When replacing an existing file, return the complete file and keep every existing clause ID unchanged.",
+    "Never edit generated *-spec-full.md files.",
+    "Record each design choice you had to make as a DP-nn item under Findings, for the operator to ratify. Do not invent facts about existing specs: cite clause IDs.",
+    "Use the terminology of the existing specs. Retired names (OS/7, Kernel Map, operator map, amk-registry, host-ai-kernel-prompt) appear only in a deprecation table."
+  ],
+  "spec": {
+    "root": "amk/",
+    "glob": "**/*.md",
+    "item_regex": ""
+  },
+  "verify": {
+    "commands": []
+  }
+}

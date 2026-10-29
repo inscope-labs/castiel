@@ -1,0 +1,59 @@
+{
+  "id": "10008-5-101-00",
+  "title": "Authority: foundations and main specification",
+  "stage": "5-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Changes are limited to the listed files; every existing clause ID is preserved and new clauses take the next free ordinal in their file.",
+    "Every change is traceable to a cited open item or to a named kernel/protocol document, recorded under Spec references in the report.",
+    "Converts the foundations to one clause per statement with ordinal IDs and removes duplication of the foundations between the main file and 00-foundations.",
+    "Resolves CORE-O-05, or records a deferral permitted by D-10."
+  ],
+  "deliverables": [
+    "amk/components/amk-authority/00-foundations.md",
+    "amk/components/amk-authority/amk-authority.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "CORE-O-05"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/00-foundations.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

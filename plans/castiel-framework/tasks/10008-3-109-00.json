@@ -1,0 +1,59 @@
+{
+  "id": "10008-3-109-00",
+  "title": "Specify version negotiation",
+  "stage": "3-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines how parties declare and negotiate contract versions and what happens on mismatch.",
+    "Is consistent with the versioning policy and the common envelope fields.",
+    "Resolves RTM-O-19, or records a deferral permitted by D-10."
+  ],
+  "deliverables": [
+    "amk/runtime-system-protocols/version-negotiation/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "task",
+      "ref": "10008-3-101-00"
+    }
+  ],
+  "spec_refs": [
+    "SCF:runtime-system-protocols/version-negotiation",
+    "RTM-O-19"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

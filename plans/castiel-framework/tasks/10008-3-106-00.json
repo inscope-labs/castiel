@@ -1,0 +1,61 @@
+{
+  "id": "10008-3-106-00",
+  "title": "Specify identity",
+  "stage": "3-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines the identities used in the framework (session, entity, gateway, Host AI profile) and how each is bound and verified.",
+    "Defines the session handle and the rule for what makes two requests the same session identity.",
+    "Cites the authority and controller clauses it relies on."
+  ],
+  "deliverables": [
+    "amk/runtime-system-protocols/identity/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:runtime-system-protocols/identity"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/05-identity-binding.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/03-console-identity.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

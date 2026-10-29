@@ -1,0 +1,84 @@
+{
+  "id": "10008-5-204-00",
+  "title": "Console: closure",
+  "stage": "5-2",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Changes are limited to the listed files; every existing clause ID is preserved and new clauses take the next free ordinal in their file.",
+    "Every change is traceable to a cited open item or to a named kernel/protocol document, recorded under Spec references in the report.",
+    "Updates every console open item to resolved, deferred (rationale and owner per D-10) or retired.",
+    "Writes the component README and the key store extension point as an extension-point specification."
+  ],
+  "deliverables": [
+    "amk/components/amk-console/06-profiles.md",
+    "amk/components/amk-console/99-open-items.md",
+    "amk/components/amk-console/README.md",
+    "amk/components/amk-console/amk-console.md",
+    "amk/components/amk-console/key-store-extension-point/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "task",
+      "ref": "10008-5-201-00"
+    },
+    {
+      "type": "task",
+      "ref": "10008-5-202-00"
+    },
+    {
+      "type": "task",
+      "ref": "10008-5-203-00"
+    },
+    {
+      "type": "decision",
+      "ref": "D-10"
+    }
+  ],
+  "spec_refs": [
+    "SCF:components/amk-console",
+    "SCF:components/amk-console/key-store-extension-point"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/06-profiles.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/99-open-items.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

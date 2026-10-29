@@ -1,0 +1,57 @@
+{
+  "id": "10008-8-104-00",
+  "title": "Write the compliance mapping method",
+  "stage": "8-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines how mappings to external frameworks are made, versioned and disclaimed, as decided in D-09.",
+    "Defines the meaning of the COMPLIANCE_MAPPINGS_VERSION value."
+  ],
+  "deliverables": [
+    "amk/reference-material/compliance-mappings/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "decision",
+      "ref": "D-09"
+    }
+  ],
+  "spec_refs": [
+    "SCF:reference-material/compliance-mappings"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

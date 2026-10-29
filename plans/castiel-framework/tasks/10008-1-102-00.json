@@ -1,0 +1,54 @@
+{
+  "id": "10008-1-102-00",
+  "title": "Write the framework terminology",
+  "stage": "1-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines every capitalised or technical term used in the five core specs, one definition each, with source clause references.",
+    "Lists retired names with replacements: OS/7 to OS/10, Kernel Map to Release Manifest, operator map to the surface map (HTSM), amk-registry to amk-authority, host-ai-kernel-prompt to amk-prompt.",
+    "Disambiguates the three axes: platform profile (Basic/Standard/High capability tiers), kernel operating level (verified Host AI capability), conformance level (proof).",
+    "No term is defined twice; any contradiction found with an existing clause is listed under Findings, not silently resolved."
+  ],
+  "deliverables": [
+    "amk/reference-material/terminology/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:reference-material/terminology"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

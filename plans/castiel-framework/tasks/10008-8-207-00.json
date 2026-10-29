@@ -1,0 +1,31 @@
+{
+  "id": "10008-8-207-00",
+  "title": "Supply the code licence text",
+  "stage": "8-2",
+  "executor": "operator",
+  "status": "planned",
+  "acceptance": [
+    "The operator places the licence text in amk/LICENSE-CODE exactly as chosen in D-04 and records the commit.",
+    "The text matches the explanation in LICENSING.md."
+  ],
+  "deliverables": [],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "task",
+      "ref": "10008-8-204-00"
+    },
+    {
+      "type": "decision",
+      "ref": "D-04"
+    }
+  ],
+  "spec_refs": [
+    "SCF:amk/LICENSE-CODE"
+  ],
+  "context": [],
+  "verify": {
+    "method": "manual"
+  },
+  "summary": "Legal text is supplied by the operator, never drafted by an agent."
+}

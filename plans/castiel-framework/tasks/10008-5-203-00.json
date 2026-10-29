@@ -1,0 +1,60 @@
+{
+  "id": "10008-5-203-00",
+  "title": "Console: runtimes, authorization and validation",
+  "stage": "5-2",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Changes are limited to the listed files; every existing clause ID is preserved and new clauses take the next free ordinal in their file.",
+    "Every change is traceable to a cited open item or to a named kernel/protocol document, recorded under Spec references in the report.",
+    "Aligns with the authorization, verification and package-lifecycle documents; runtime registration is a console-local workflow."
+  ],
+  "deliverables": [
+    "amk/components/amk-console/04-runtimes-work-preauth.md",
+    "amk/components/amk-console/05-validation-revocation.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/04-runtimes-work-preauth.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/05-validation-revocation.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

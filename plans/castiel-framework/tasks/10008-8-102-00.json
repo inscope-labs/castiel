@@ -1,0 +1,52 @@
+{
+  "id": "10008-8-102-00",
+  "title": "Write the architecture decisions record",
+  "stage": "8-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Records the settled decisions that shaped the framework (component set, renames, trust and transport decisions) in a decision-record form with context, decision and consequences.",
+    "Each record cites the clauses that embody it."
+  ],
+  "deliverables": [
+    "amk/reference-material/architecture-decisions/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:reference-material/architecture-decisions"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "10008-7-201-00",
+  "title": "Specify the conformance taxonomy",
+  "stage": "7-2",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines the conformance levels (the proof axis) decided in D-07, the conformance classes and the test categories.",
+    "Keeps conformance levels distinct from platform profiles and kernel operating levels."
+  ],
+  "deliverables": [
+    "amk/conformance/taxonomy/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "decision",
+      "ref": "D-07"
+    }
+  ],
+  "spec_refs": [
+    "SCF:conformance/taxonomy"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

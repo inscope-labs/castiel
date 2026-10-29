@@ -1,0 +1,60 @@
+{
+  "id": "10008-1-101-00",
+  "title": "Define the clause-naming and reference rules",
+  "stage": "1-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Specifies the reference grammar PREFIX-file:rule, ordinal numbering and how a document declares its prefix.",
+    "Contains a prefix registry listing every existing prefix (SSOT, ATA, CNS, CTR, PMT, RTM) and the prefixes chosen in D-01 for every other framework area, each used by exactly one area.",
+    "States immutability: IDs are never reassigned; withdrawn rules keep their ID and are marked RETIRED, with the marking convention.",
+    "Defines ID families for open items (PREFIX-O-nn, CORE-O-nn), default values (DV-PREFIX-nn) and obligations (by reference to the obligation-id-scheme).",
+    "Includes at least three worked examples (new clause, retired clause, cross-reference) in plain text."
+  ],
+  "deliverables": [
+    "amk/abstract-kernel/clause-naming-rules/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "decision",
+      "ref": "D-01"
+    }
+  ],
+  "spec_refs": [
+    "SCF:abstract-kernel/clause-naming-rules"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

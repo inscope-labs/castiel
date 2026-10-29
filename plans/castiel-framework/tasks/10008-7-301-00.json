@@ -1,0 +1,52 @@
+{
+  "id": "10008-7-301-00",
+  "title": "Specify the traceability matrix",
+  "stage": "7-3",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines the matrix structure from requirement to clause to obligation to vector, and the coverage rules.",
+    "Provides the matrix content per component as tables, listing any clause without a vector."
+  ],
+  "deliverables": [
+    "amk/conformance/traceability-matrix/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:conformance/traceability-matrix"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

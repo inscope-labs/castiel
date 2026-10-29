@@ -1,0 +1,58 @@
+{
+  "id": "10008-9-105-00",
+  "title": "Reconcile the open-item register",
+  "stage": "9-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Updates every item to resolved, deferred (rationale and owner per D-10) or retired, and adds the runtime and prompt items to the index.",
+    "Every item still open after this task is justified.",
+    "Resolves CORE-O-06 together with the cross-spec review, or records a deferral permitted by D-10."
+  ],
+  "deliverables": [
+    "amk/OPEN-ITEMS.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "decision",
+      "ref": "D-10"
+    }
+  ],
+  "spec_refs": [
+    "CORE-O-06"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

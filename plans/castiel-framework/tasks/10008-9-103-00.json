@@ -1,0 +1,53 @@
+{
+  "id": "10008-9-103-00",
+  "title": "Write the clause index",
+  "stage": "9-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Lists every spec file, its prefix and its clause ID range.",
+    "Flags duplicate or missing IDs found while indexing.",
+    "Is consistent with the clause-naming rules."
+  ],
+  "deliverables": [
+    "amk/CLAUSE-INDEX.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:amk/CLAUSE-INDEX"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

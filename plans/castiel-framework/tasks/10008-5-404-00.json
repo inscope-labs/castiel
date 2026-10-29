@@ -1,0 +1,83 @@
+{
+  "id": "10008-5-404-00",
+  "title": "Runtime: profiles, open items and main specification",
+  "stage": "5-4",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Changes are limited to the listed files; every existing clause ID is preserved and new clauses take the next free ordinal in their file.",
+    "Every change is traceable to a cited open item or to a named kernel/protocol document, recorded under Spec references in the report.",
+    "Resolves RTM-O-20, and moves the default values into DV clauses (the runtime part of CORE-O-04), or records deferrals permitted by D-10.",
+    "Updates every runtime open item to resolved, deferred (rationale and owner per D-10) or retired; writes the component README."
+  ],
+  "deliverables": [
+    "amk/components/amk-runtime/07-profiles.md",
+    "amk/components/amk-runtime/99-open-items.md",
+    "amk/components/amk-runtime/amk-runtime.md",
+    "amk/components/amk-runtime/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "task",
+      "ref": "10008-5-401-00"
+    },
+    {
+      "type": "task",
+      "ref": "10008-5-402-00"
+    },
+    {
+      "type": "task",
+      "ref": "10008-5-403-00"
+    },
+    {
+      "type": "decision",
+      "ref": "D-10"
+    }
+  ],
+  "spec_refs": [
+    "SCF:components/amk-runtime",
+    "RTM-O-20"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/07-profiles.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/99-open-items.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

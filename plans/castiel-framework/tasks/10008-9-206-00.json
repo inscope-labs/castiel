@@ -1,0 +1,33 @@
+{
+  "id": "10008-9-206-00",
+  "title": "Review and tag the release",
+  "stage": "9-2",
+  "executor": "operator",
+  "status": "planned",
+  "acceptance": [
+    "The operator reviews the traceability matrix, cross-spec review and open-item register, then tags the release with the suite version.",
+    "Any unresolved finding is recorded as a deferral per D-10."
+  ],
+  "deliverables": [],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "task",
+      "ref": "10008-9-204-00"
+    },
+    {
+      "type": "task",
+      "ref": "10008-9-203-00"
+    },
+    {
+      "type": "task",
+      "ref": "10008-9-205-00"
+    }
+  ],
+  "spec_refs": [],
+  "context": [],
+  "verify": {
+    "method": "manual"
+  },
+  "summary": "Final release decision belongs to the operator."
+}

@@ -1,0 +1,58 @@
+{
+  "id": "10008-3-207-00",
+  "title": "Specify verification",
+  "stage": "3-2",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines verification of attestations, signatures and surface maps, and the console validation gate set with its versioning.",
+    "Defines the optional session validation layer as an optional, bounded mechanism whose claim is traversal continuity and evidence consistency, not Host AI identity.",
+    "Resolves CNS-O-02, or records a deferral permitted by D-10."
+  ],
+  "deliverables": [
+    "amk/runtime-system-protocols/verification/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:runtime-system-protocols/verification",
+    "CNS-O-02"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/05-validation-revocation.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

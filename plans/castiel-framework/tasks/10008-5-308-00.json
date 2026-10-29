@@ -1,0 +1,90 @@
+{
+  "id": "10008-5-308-00",
+  "title": "Session-router: policy to appendices",
+  "stage": "5-3",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Changes are limited to the listed files; every existing clause ID is preserved and new clauses take the next free ordinal in their file.",
+    "Every change is traceable to a cited open item or to a named kernel/protocol document, recorded under Spec references in the report.",
+    "Expands the adapter specification so any agent communicating through the surface map becomes a compliant router entity through its kernel-subtree adapter.",
+    "Removes any language- or product-specific statement from the conformance section."
+  ],
+  "deliverables": [
+    "amk/components/amk-controller/session-router/04-routing-policy-admission.md",
+    "amk/components/amk-controller/session-router/05-adapters.md",
+    "amk/components/amk-controller/session-router/06-knowledge-failure.md",
+    "amk/components/amk-controller/session-router/07-instances-discovery.md",
+    "amk/components/amk-controller/session-router/08-conformance.md",
+    "amk/components/amk-controller/session-router/99-appendices.md",
+    "amk/components/amk-controller/session-router/session-router.md",
+    "amk/components/amk-controller/session-router/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "task",
+      "ref": "10008-5-307-00"
+    }
+  ],
+  "spec_refs": [
+    "SCF:components/amk-controller/session-router"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/04-routing-policy-admission.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/05-adapters.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/06-knowledge-failure.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/07-instances-discovery.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/08-conformance.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/99-appendices.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

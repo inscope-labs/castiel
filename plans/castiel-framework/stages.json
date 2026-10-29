@@ -1,0 +1,162 @@
+{
+  "phases": [
+    {
+      "id": "1",
+      "name": "Ground rules"
+    },
+    {
+      "id": "2",
+      "name": "Kernel foundations"
+    },
+    {
+      "id": "3",
+      "name": "System protocols"
+    },
+    {
+      "id": "4",
+      "name": "Cross-cutting and packaging"
+    },
+    {
+      "id": "5",
+      "name": "Component completion"
+    },
+    {
+      "id": "6",
+      "name": "Implementation specification"
+    },
+    {
+      "id": "7",
+      "name": "Conformance"
+    },
+    {
+      "id": "8",
+      "name": "Reference material and governance"
+    },
+    {
+      "id": "9",
+      "name": "Integration and release"
+    }
+  ],
+  "stages": [
+    {
+      "id": "1-1",
+      "name": "Ground rules and conventions",
+      "goal": "Conventions every later document relies on.",
+      "gate": true
+    },
+    {
+      "id": "2-1",
+      "name": "Kernel core model",
+      "goal": "Data model, trust, authority, invariants and threats.",
+      "gate": true
+    },
+    {
+      "id": "2-2",
+      "name": "Kernel mechanisms",
+      "goal": "Bootstrap, cryptographic lifecycle, time, levels, extension model, security.",
+      "gate": true
+    },
+    {
+      "id": "3-1",
+      "name": "Message, identity and policy foundations",
+      "goal": "Envelopes, identity, errors, policy, versioning.",
+      "gate": true
+    },
+    {
+      "id": "3-2",
+      "name": "Session and work protocols",
+      "goal": "Boot, session launch, authorization, work orders, execution, evidence.",
+      "gate": true
+    },
+    {
+      "id": "4-1",
+      "name": "Cross-cutting requirements",
+      "goal": "Requirements that apply across every component.",
+      "gate": true
+    },
+    {
+      "id": "4-2",
+      "name": "Package framework",
+      "goal": "Runtime packages, capabilities, lifecycle and system packages.",
+      "gate": true
+    },
+    {
+      "id": "5-1",
+      "name": "Authority completion",
+      "goal": "Bring amk-authority to a closed, consistent specification.",
+      "gate": true
+    },
+    {
+      "id": "5-2",
+      "name": "Console completion",
+      "goal": "Bring amk-console to a closed, consistent specification.",
+      "gate": true
+    },
+    {
+      "id": "5-3",
+      "name": "Controller and session-router completion",
+      "goal": "Bring amk-controller and the session-router to a closed specification.",
+      "gate": true
+    },
+    {
+      "id": "5-4",
+      "name": "Runtime and prompt completion",
+      "goal": "Bring amk-runtime and amk-prompt to a closed specification.",
+      "gate": true
+    },
+    {
+      "id": "6-1",
+      "name": "Implementation foundations",
+      "goal": "What an implementation must provide and enforce.",
+      "gate": true
+    },
+    {
+      "id": "6-2",
+      "name": "Platform profiles",
+      "goal": "Basic, Standard and High platform capability tiers.",
+      "gate": true
+    },
+    {
+      "id": "7-1",
+      "name": "Compliance model",
+      "goal": "Obligation scheme, projections, evidence linkage, certifiable output.",
+      "gate": true
+    },
+    {
+      "id": "7-2",
+      "name": "Conformance artefacts",
+      "goal": "Taxonomy, declaration, harness interface, vectors, trust map.",
+      "gate": true
+    },
+    {
+      "id": "7-3",
+      "name": "Traceability and certification",
+      "goal": "Traceability matrix and certification guidance.",
+      "gate": true
+    },
+    {
+      "id": "8-1",
+      "name": "Reference material",
+      "goal": "Informative architecture, decisions, examples, compliance mappings.",
+      "gate": true
+    },
+    {
+      "id": "8-2",
+      "name": "Governance and legal",
+      "goal": "Governance, contribution, security, licensing.",
+      "gate": true
+    },
+    {
+      "id": "9-1",
+      "name": "Cross-spec integration",
+      "goal": "Make the whole framework consistent and indexed.",
+      "gate": true
+    },
+    {
+      "id": "9-2",
+      "name": "Release",
+      "goal": "Top-level documents, versions and the release itself.",
+      "gate": true
+    }
+  ]
+}

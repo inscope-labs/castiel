@@ -1,0 +1,54 @@
+{
+  "id": "10008-6-201-00",
+  "title": "Specify platform profiles and the neutrality statement",
+  "stage": "6-2",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines Basic, Standard and High as hardware and platform capability tiers, strictly separate from kernel operating levels and conformance levels.",
+    "The neutrality statement says the framework is platform- and language-agnostic and that lower tiers exist so weaker implementations can remain compliant."
+  ],
+  "deliverables": [
+    "amk/implementation-specification/platform-profiles/README.md",
+    "amk/implementation-specification/platform-profiles/profile-neutrality-statement/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:implementation-specification/platform-profiles",
+    "SCF:implementation-specification/platform-profiles/profile-neutrality-statement"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "10008-7-207-00",
+  "title": "Write the authority, trust and authorization map",
+  "stage": "7-2",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Provides a table stating, for every core action, who is trusted, who authorizes and where it is enforced, each row citing clause IDs.",
+    "Is consistent with the trust model and authority model."
+  ],
+  "deliverables": [
+    "amk/conformance/authority-trust-authorization-map/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:conformance/authority-trust-authorization-map"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

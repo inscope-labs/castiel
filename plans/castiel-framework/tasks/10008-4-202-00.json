@@ -1,0 +1,55 @@
+{
+  "id": "10008-4-202-00",
+  "title": "Specify the capability model",
+  "stage": "4-2",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines how a package declares capabilities and how capabilities are scoped, level-gated and granted.",
+    "Defines runtime-to-runtime dependency rules and the credentials a runtime may receive.",
+    "Resolves RTM-O-07 and RTM-O-16, or records deferrals permitted by D-10."
+  ],
+  "deliverables": [
+    "amk/package-framework/capability-model/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:package-framework/capability-model",
+    "RTM-O-07",
+    "RTM-O-16"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

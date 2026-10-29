@@ -1,0 +1,64 @@
+{
+  "id": "10008-3-201-00",
+  "title": "Specify the boot sequence",
+  "stage": "3-2",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines the boot sequence from the bootstrap location through release verification to the idle controller and the first console connection.",
+    "Defines failure handling: the administrator notification and the standard error code consoles receive.",
+    "Defines the recovery protocol after a restart for Standard and High profiles.",
+    "Resolves CNS-O-03 and CTR-O-07, or records deferrals permitted by D-10."
+  ],
+  "deliverables": [
+    "amk/runtime-system-protocols/boot-sequence/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:runtime-system-protocols/boot-sequence",
+    "CNS-O-03",
+    "CTR-O-07"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/01-bootstrap-state.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/03-session-lifecycle.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "10008-4-107-00",
+  "title": "Specify resource governance",
+  "stage": "4-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Defines quota, limit and anti-abuse requirements and the default values as DV clauses.",
+    "Defines what happens when a limit is exceeded."
+  ],
+  "deliverables": [
+    "amk/cross-cutting-requirements/resource-governance/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [],
+  "spec_refs": [
+    "SCF:cross-cutting-requirements/resource-governance"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

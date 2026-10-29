@@ -1,0 +1,63 @@
+{
+  "id": "10008-9-107-00",
+  "title": "Write the core area indexes",
+  "stage": "9-1",
+  "executor": "worker",
+  "status": "planned",
+  "acceptance": [
+    "Each README states the area's purpose, lists its documents in reading order and links the clauses they define.",
+    "Each is consistent with the completed documents of its area."
+  ],
+  "deliverables": [
+    "amk/abstract-kernel/README.md",
+    "amk/runtime-system-protocols/README.md",
+    "amk/cross-cutting-requirements/README.md",
+    "amk/package-framework/README.md"
+  ],
+  "companions": [],
+  "blocked_by": [
+    {
+      "type": "task",
+      "ref": "10008-9-106-00"
+    }
+  ],
+  "spec_refs": [
+    "SCF:abstract-kernel",
+    "SCF:runtime-system-protocols",
+    "SCF:cross-cutting-requirements",
+    "SCF:package-framework"
+  ],
+  "context": [
+    {
+      "source": "target",
+      "path": "amk/amk-ssot.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-authority/amk-authority.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-console/amk-console.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/amk-controller.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-prompt/amk-prompt.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-runtime/amk-runtime.md"
+    },
+    {
+      "source": "target",
+      "path": "amk/components/amk-controller/session-router/session-router.md"
+    }
+  ],
+  "verify": {
+    "method": "manual"
+  }
+}

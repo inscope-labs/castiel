@@ -1,0 +1,251 @@
+name: Integrate Build Engine release
+
+# Manual only. Installs the latest published inscope-labs/build-engine release into this repository
+# when it is higher than the version already installed (per .build-engine.lock). If nothing newer
+# exists, or an integration for that version is already proposed, the run succeeds and changes nothing.
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Optional X.Y.Z. Leave blank to install the latest release (only if higher than installed)."
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: build-engine-integration
+  cancel-in-progress: false
+
+jobs:
+  integrate:
+    name: Verify and propose release integration
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SOURCE_REPO: inscope-labs/build-engine
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - name: Check out Castiel
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Resolve target version and decide whether to integrate
+        id: plan
+        shell: bash
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+
+          if [[ -n "$INPUT_VERSION" ]]; then
+            target="${INPUT_VERSION#v}"
+            source_note="requested"
+          else
+            tag="$(gh release view --repo "$SOURCE_REPO" --json tagName --jq .tagName)"
+            target="${tag#v}"
+            source_note="latest published"
+          fi
+          if [[ ! "$target" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::Resolved version '$target' is not numeric X.Y.Z."
+            exit 1
+          fi
+
+          # Installed version: the updater's lock file, else the managed release metadata.
+          installed=""
+          if [[ -f .build-engine.lock ]]; then
+            installed="$(sed -n 's/^version=//p' .build-engine.lock | head -n1)"
+          fi
+          if [[ -z "$installed" && -f engine/release.json ]]; then
+            installed="$(python3 -c 'import json; print(json.load(open("engine/release.json")).get("engine_version",""))')"
+          fi
+
+          proceed=true
+          reason=""
+          if [[ -n "$installed" ]]; then
+            if [[ ! "$installed" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+              echo "::error::Installed version '$installed' is not numeric X.Y.Z; refusing to guess."
+              exit 1
+            fi
+            highest="$(printf '%s\n%s\n' "$installed" "$target" | sort -V | tail -n1)"
+            if [[ "$installed" == "$target" || "$highest" == "$installed" ]]; then
+              proceed=false
+              reason="The $source_note release is $target; installed is $installed. Nothing to do (a downgrade or reinstall is never performed)."
+            fi
+          fi
+
+          # An integration for this version may already be proposed under any branch suffix.
+          if [[ "$proceed" == true ]] &&
+             git ls-remote --exit-code --heads origin "integrate/build-engine-v${target}*" >/dev/null 2>&1; then
+            proceed=false
+            reason="An integration branch for v${target} already exists. Review or close it before re-running."
+          fi
+
+          if [[ "$proceed" == true ]]; then
+            echo "Installing build-engine ${target} (${source_note}); installed: ${installed:-none}."
+          else
+            echo "::notice::$reason"
+            echo "### Build Engine integration: no change" >> "$GITHUB_STEP_SUMMARY"
+            echo "$reason" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          {
+            echo "proceed=$proceed"
+            echo "version=$target"
+            echo "installed=$installed"
+          } >> "$GITHUB_OUTPUT"
+          echo "VERSION=$target" >> "$GITHUB_ENV"
+          echo "INSTALLED=$installed" >> "$GITHUB_ENV"
+
+      - name: Prepare isolated integration branch
+        if: steps.plan.outputs.proceed == 'true'
+        id: branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git switch --detach origin/main
+          branch="integrate/build-engine-v${VERSION}"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+            echo "::error::Remote branch $branch already exists. Refusing to overwrite or reuse it."
+            exit 1
+          fi
+          git switch -c "$branch"
+          echo "name=$branch" >> "$GITHUB_OUTPUT"
+
+      - name: Download official release archive and checksum
+        if: steps.plan.outputs.proceed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          tmp_dir="$RUNNER_TEMP/build-engine-v${VERSION}"
+          mkdir -p "$tmp_dir"
+          archive="build-engine-v${VERSION}.tar.gz"
+          checksum="$archive.sha256"
+
+          gh release download "v${VERSION}" \
+            --repo "$SOURCE_REPO" \
+            --dir "$tmp_dir" \
+            --pattern "$archive" \
+            --pattern "$checksum"
+
+          test -s "$tmp_dir/$archive"
+          test -s "$tmp_dir/$checksum"
+
+          # Verify before extracting or executing any code from the archive.
+          (
+            cd "$tmp_dir"
+            sha256sum --check "$checksum"
+          )
+
+          echo "RELEASE_DIR=$tmp_dir" >> "$GITHUB_ENV"
+
+      - name: Run the official release updater
+        if: steps.plan.outputs.proceed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="build-engine-v${VERSION}.tar.gz"
+
+          # Extract only the updater after the archive checksum has passed.
+          tar -xzf "$RELEASE_DIR/$archive" \
+            -O engine/bin/update.sh > "$RUNNER_TEMP/build-engine-update.sh"
+          test -s "$RUNNER_TEMP/build-engine-update.sh"
+
+          # The updater independently checks the checksum, manifest, payload version,
+          # path safety, and managed-file conflicts. Never force or allow downgrade.
+          bash "$RUNNER_TEMP/build-engine-update.sh" \
+            --from-dir "$RELEASE_DIR" \
+            --version "$VERSION" \
+            --repo "$SOURCE_REPO"
+
+      - name: Enforce integration scope and preserve AMK files
+        if: steps.plan.outputs.proceed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # The consumer integration must not alter Castiel's existing AMK specs
+          # or the root README.
+          if ! git diff --quiet -- amk README.md; then
+            echo "::error::Updater changed amk/ or README.md; refusing to publish."
+            git diff -- amk README.md
+            exit 1
+          fi
+
+          # Fail closed if the updater creates or changes anything outside the
+          # expected Build Engine consumer paths.
+          git status --porcelain=v1 --untracked-files=all |
+          while IFS= read -r line; do
+            path="${line:3}"
+            case "$path" in
+              .build-engine.lock|engine/*|operator/*|docs/*|plans/*) ;;
+              *)
+                echo "::error::Unexpected changed path outside integration scope: $path"
+                exit 1
+                ;;
+            esac
+          done
+
+          git add -A -- .build-engine.lock
+          for path in engine operator docs plans; do
+            if [[ -e "$path" ]]; then
+              git add -A -- "$path"
+            fi
+          done
+
+          if git diff --cached --quiet; then
+            echo "::error::Updater produced no changes; refusing to create an empty pull request."
+            exit 1
+          fi
+
+          git diff --cached --check
+          git diff --cached --stat
+          git diff --cached --name-status
+
+      - name: Commit and publish integration branch
+        if: steps.plan.outputs.proceed == 'true'
+        id: publish
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Integrate Build Engine v${VERSION}"
+          git push --set-upstream origin "${{ steps.branch.outputs.name }}"
+          echo "branch=${{ steps.branch.outputs.name }}" >> "$GITHUB_OUTPUT"
+
+      - name: Open draft pull request
+        if: steps.plan.outputs.proceed == 'true'
+        shell: bash
+        env:
+          INTEGRATION_BRANCH: ${{ steps.publish.outputs.branch }}
+        run: |
+          set -euo pipefail
+          from="${INSTALLED:-none}"
+          body="$(cat <<EOF
+          ## Summary
+          - Integrates the official \`inscope-labs/build-engine\` release \`v${VERSION}\` (previously installed: \`${from}\`) using its bundled updater.
+          - Verifies the release archive checksum before extracting the updater.
+          - Lets the updater validate its release manifest and file hashes and enforce managed-file conflict safeguards.
+          - Preserves \`amk/\` and the root \`README.md\`; no force or downgrade flags are used.
+
+          ## Verification
+          - The workflow fails on checksum, manifest, version, path-safety, scope, or conflict errors.
+          - Review the changed-file list and release notes (https://github.com/inscope-labs/build-engine/releases/tag/v${VERSION}) before merging.
+          - This pull request is not merged automatically. Pushes made with the workflow token do not start other workflows.
+          EOF
+          )"
+          gh pr create \
+            --repo "$GITHUB_REPOSITORY" \
+            --head "$INTEGRATION_BRANCH" \
+            --base main \
+            --draft \
+            --title "Integrate Build Engine v${VERSION}" \
+            --body "$body"

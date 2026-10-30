@@ -67,7 +67,7 @@ except where the `Request` line says otherwise. Confirm or drop each one.
 
 - **Request:** Derived. The plan records the same fault as its decision D-03 and proposes "fix the paths by hand outside
   the plan, then regenerate", because workflows and tooling are code and the plan is Markdown-only.
-- **Status:** IN PROGRESS — branch `restructure/release-layout`: the `merge-spec*.yml` workflows are retired and replaced
+- **Status:** IN PROGRESS — PR #6 (branch `restructure/release-layout`): the `merge-spec*.yml` workflows are retired and replaced
   by `spec-build.yml` and `release.yml`; the `*-spec-full.md` files are no longer committed. Close this entry when that
   pull request is merged and a `spec-build` run has passed on `main`. Plan decision D-03 is still unresolved in
   `decisions.json` and is for the operator to resolve.

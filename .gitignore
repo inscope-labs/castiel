@@ -1,0 +1,4 @@
+dist/
+__pycache__/
+# Generated merged specifications are build outputs; never commit them.
+amk/**/*-spec-full.md

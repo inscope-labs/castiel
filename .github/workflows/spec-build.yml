@@ -1,0 +1,50 @@
+name: spec-build
+
+# Regenerates every merged specification from source, runs the tooling tests and
+# verifies the draft release tree. Nothing generated is committed; the tree is
+# uploaded as a workflow artifact. Strict (release) checks run in release.yml.
+
+on:
+  pull_request:
+    paths:
+      - "amk/**"
+      - "README.md"
+      - "VERSION"
+      - "CHANGELOG.md"
+      - "LICENSE"
+      - "LICENSES/**"
+      - "SECURITY.md"
+      - "GOVERNANCE.md"
+      - "CONTRIBUTING.md"
+      - ".github/workflows/spec-build.yml"
+  push:
+    branches: [main]
+    paths:
+      - "amk/**"
+      - "README.md"
+      - ".github/workflows/spec-build.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tooling tests
+        run: python3 -m unittest discover -s amk/scripts -p 'test_*.py'
+
+      - name: Build draft release tree
+        run: python3 amk/scripts/build_release.py build --out dist
+
+      - name: Verify checksums and manifest
+        run: python3 amk/scripts/build_release.py verify dist/castiel-unversioned
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: castiel-draft-release
+          path: dist/
+          if-no-files-found: error

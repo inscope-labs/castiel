@@ -1,0 +1,65 @@
+name: release
+
+# Builds the official release artifact when a version tag is pushed (v0.1.0, ...).
+# The strict build fails on any placeholder file, an invalid VERSION, a dirty tree
+# or a merge error. The tag must equal v + the VERSION file.
+#
+# Signing: if the repository secret MINISIGN_SECRET_KEY (an unencrypted minisign
+# secret key) is set, release/SHA256SUMS.sig is produced. A build-provenance
+# attestation is always produced.
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check tag against VERSION
+        run: |
+          expected="v$(tr -d '[:space:]' < VERSION)"
+          if [ "$GITHUB_REF_NAME" != "$expected" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match VERSION ($expected)"; exit 1
+          fi
+
+      - name: Tooling tests
+        run: python3 -m unittest discover -s amk/scripts -p 'test_*.py'
+
+      - name: Strict build
+        run: python3 amk/scripts/build_release.py build --out dist --strict
+
+      - name: Sign checksums (optional)
+        env:
+          MINISIGN_SECRET_KEY: ${{ secrets.MINISIGN_SECRET_KEY }}
+        run: |
+          if [ -z "$MINISIGN_SECRET_KEY" ]; then
+            echo "::warning::MINISIGN_SECRET_KEY is not set; release is not signed with a detached signature."
+            exit 0
+          fi
+          sudo apt-get install -y minisign >/dev/null
+          dir="$(ls -d dist/castiel-v*/ | head -1)"
+          printf '%s\n' "$MINISIGN_SECRET_KEY" > "$RUNNER_TEMP/minisign.key"
+          minisign -S -s "$RUNNER_TEMP/minisign.key" -m "$dir/release/SHA256SUMS" -x "$dir/release/SHA256SUMS.sig"
+          rm -f "$RUNNER_TEMP/minisign.key"
+
+      - name: Archive
+        run: python3 amk/scripts/build_release.py archive "$(ls -d dist/castiel-v*/ | head -1)"
+
+      - uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: dist/*.tar.gz
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/*.tar.gz dist/*.tar.gz.sha256 \
+            --title "Castiel $GITHUB_REF_NAME" --notes-file CHANGELOG.md --verify-tag

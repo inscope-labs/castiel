@@ -136,16 +136,17 @@ and are not negotiable by an implementation.
    (normative core)      (normative support)        (normative contract)
         │                        │                        │
    amk-authority            abstract-kernel/          implementation-
-   amk-console              runtime-system-          specification/
-   amk-controller           protocols/                conformance/
-   amk-prompt               cross-cutting-
-   amk-runtime              requirements/
-        │                   package-framework/             │
-        └──────────────┬──────────┬──────────┬────────────┘
-                       │          │          │
-              conformance/   reference-   versioning/
-              (profiles,     material/    schemas/
-               test vectors) (informative)
+   amk-console              protocols/                specification/
+   amk-controller           cross-cutting-            conformance/
+   amk-prompt               requirements/
+   amk-runtime              package-framework/             │
+        │                          │                        │
+        └──────────────┬───────────┬────────────┬───────────┘
+                       │           │            │
+                  governance/  reference-    releases/
+                  (versioning, material/     (manifest,
+                   change       (informative) provenance)
+                   control)
 ```
 
 Three rules make the hierarchy unambiguous:
@@ -172,21 +173,21 @@ Three rules make the hierarchy unambiguous:
 | Open-items index | [`amk/OPEN-ITEMS.md`](amk/OPEN-ITEMS.md) | Informative (working view) |
 | Per-component open items | `amk/components/amk-*/99-open-items.md` | Informative (normative lists) |
 | Kernel foundations | `amk/abstract-kernel/` | Placeholder — plan 10008 phase 2 |
-| System protocols | `amk/runtime-system-protocols/` | Placeholder — plan 10008 phase 3 |
+| Protocols (envelopes, identity, errors, session launch) and their schemas | `amk/protocols/` | Placeholder — plan 10008 phase 3 |
 | Cross-cutting requirements | `amk/cross-cutting-requirements/` | Placeholder — plan 10008 phase 4 |
 | Package framework | `amk/package-framework/` | Placeholder — plan 10008 phase 4 |
 | Implementation specification | `amk/implementation-specification/` | Placeholder — plan 10008 phase 6 |
 | Conformance model, taxonomy, vectors | `amk/conformance/` | Placeholder — plan 10008 phase 7 |
 | Reference architecture, examples, compliance mappings | `amk/reference-material/` | Placeholder — plan 10008 phase 8 |
-| Machine-readable schemas | `amk/schemas/` | Placeholder — decision D-08 |
-| Versioning policy | `amk/versioning/` | Placeholder — decision D-06 |
+| Governance: versioning, compatibility, change control, clause naming, licensing | [`amk/governance/`](amk/governance/) | Placeholder — decisions D-04, D-05, D-06 |
+| Release process: manifest schema and provenance | [`amk/releases/`](amk/releases/) | Manifest schema published; provenance records are placeholders |
 
 Each component directory holds:
 
 - `amk-<name>.md` — the index and informative overview;
 - `00-foundations.md` … `99-open-items.md` — the normative module files;
-- `amk-<name>-spec-full.md` — a **generated** concatenation of the above, marked
-  `GENERATED FILE - DO NOT EDIT.`;
+- no committed `amk-<name>-spec-full.md`: the merged specification is **generated** at build time (see
+  [Repository tooling](#repository-tooling)) and published in the release artifact, never committed;
 - one or more extension-point directories (for example
   [`amk/components/amk-controller/policy-engine-extension-point/`](amk/components/amk-controller/policy-engine-extension-point/)),
   which are placeholders awaiting plan 10008.
@@ -201,7 +202,9 @@ Each component directory holds:
 | [`plans/castiel-framework/`](plans/castiel-framework/) | Plan 10008: the framework completion plan that produces the remaining specifications. |
 | [`engine/`](engine/) | The Build Engine v0.5.0 — repository tooling for planning and task execution. Implements no part of the AMK. |
 | [`operator/`](operator/) | Operator-side tooling for the build/bridge workflow. |
-| `.github/workflows/` | CI: the Build Engine integration workflow and the five spec-merge workflows. |
+| [`amk/scripts/`](amk/scripts/) | Specification tooling: `merge_spec.py` (merge one spec area), `build_release.py` (build, verify and archive the release artifact) and its tests. |
+| `.github/workflows/` | CI: `spec-build.yml` (regenerate and verify on every change), `release.yml` (strict build on a version tag) and the Build Engine integration workflow. |
+| Root files | `LICENSE`, `LICENSES/`, `GOVERNANCE.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CHANGELOG.md`, `VERSION` — repository-level policy files, at the root so GitHub surfaces them. All are placeholders today. |
 
 ## Reading order for a new implementation
 
@@ -259,12 +262,12 @@ verified against it.
 
 | Area | Finding |
 |---|---|
-| **Generated specs are stale** | All five committed `amk-*-spec-full.md` files no longer match their source modules. `python3 amk/scripts/merge_spec.py --dir amk/components/amk-<name> --check` reports `stale` for every component. |
-| **Regeneration would embed placeholders** | The script merges *every* `.md` file in a component directory, including the `TODO` placeholder `README.md` files, and warns that they are not listed in the component index. Regenerating as-is would inject `TODO` into published specifications. Fix the index entries first. |
-| **CI spec-merge is broken** | The five `merge-spec-amk-*.yml` workflows and the reusable [`merge-spec.yml`](.github/workflows/merge-spec.yml) pass and validate paths under `specs/core/amk-*`. No `specs/` directory exists; the specifications live under `amk/components/amk-*/`. The workflows cannot succeed as written (pending register **P-003**). |
-| **Obsolete path references** | `amk/amk-ssot.md` still marks the prompt and runtime specifications as pending addition to `specs/core/` (cross-item **CORE-O-03**), and [`amk/components/amk-authority/amk-authority.md`](amk/components/amk-authority/amk-authority.md) points at `specs/core/OPEN-ITEMS.md` while the real index is [`amk/OPEN-ITEMS.md`](amk/OPEN-ITEMS.md). The generated files also carry a stale `specs/scripts/merge_spec.py` path in their header. |
+| **Generated specs are not committed** | The five `amk-*-spec-full.md` files were removed from `main` and are now build outputs (ignored by `.gitignore`). `python3 amk/scripts/build_release.py build` regenerates all of them; `release.yml` publishes them. |
+| **Merged specs still include placeholders** | The merge includes every `.md` file in a spec area, including `TODO` placeholders. A normal build reports them as warnings; the strict build used for a release tag fails on any placeholder, so none can ship. |
+| **Spec-merge CI replaced** | The six `merge-spec*.yml` workflows pointed at `specs/core/amk-*`, which does not exist, and are removed. `spec-build.yml` and `release.yml` replace them (pending register **P-003**). |
+| **Obsolete path references** | `amk/amk-ssot.md` still marks the prompt and runtime specifications as pending addition to `specs/core/` (cross-item **CORE-O-03**), and [`amk/components/amk-authority/amk-authority.md`](amk/components/amk-authority/amk-authority.md) points at `specs/core/OPEN-ITEMS.md` while the real index is [`amk/OPEN-ITEMS.md`](amk/OPEN-ITEMS.md). |
 | **Open items remain** | Cross-component `CORE-O-01`…`CORE-O-07`; console `CNS-O-01`…`CNS-O-13`; controller `CTR-O-01`…`CTR-O-16`; authority `O-ATA-01`…`O-ATA-10`; plus runtime (`RTM-O-nn`) and prompt open items. The epoch terminology collision (`CORE-O-01`) is unresolved. |
-| **No licence, governance or contribution policy** | [`amk/LICENSE`](amk/LICENSE), [`amk/LICENSE-CODE`](amk/LICENSE-CODE), [`amk/LICENSING.md`](amk/LICENSING.md), [`amk/GOVERNANCE.md`](amk/GOVERNANCE.md), [`amk/CONTRIBUTING.md`](amk/CONTRIBUTING.md), [`amk/SECURITY.md`](amk/SECURITY.md) and [`amk/COMMERCIAL-BOUNDARY.md`](amk/COMMERCIAL-BOUNDARY.md) are placeholders pending decisions D-04 and D-05. |
+| **No licence, governance or contribution policy** | [`LICENSE`](LICENSE), [`LICENSES/LICENSE-CODE`](LICENSES/LICENSE-CODE), [`amk/governance/licensing.md`](amk/governance/licensing.md), [`GOVERNANCE.md`](GOVERNANCE.md), [`CONTRIBUTING.md`](CONTRIBUTING.md), [`SECURITY.md`](SECURITY.md) and [`amk/governance/commercial-boundary.md`](amk/governance/commercial-boundary.md) are placeholders pending decisions D-04 and D-05. |
 | **Framework README placeholder** | [`amk/README.md`](amk/README.md) is still `TODO` (plan task `10008-9-201-00`). |
 | **Build Engine not configured** | [`engine/engine.json`](engine/engine.json) still contains `OWNER/PROJECT` placeholders (pending register **P-002**). |
 | **Bridge unavailable for this repo** | The `cbridge` operator bridge assumes a private working repository plus a public upstream and refuses to run against a single public repository (**P-006**). Until that is fixed upstream, task work is published by hand. |
@@ -285,13 +288,13 @@ placeholder and letting a reader assume it is a published policy would be mislea
 
 | Document | Path | Status |
 |---|---|---|
-| Framework governance | [`amk/GOVERNANCE.md`](amk/GOVERNANCE.md) | **Placeholder** — pending decision D-05 (who decides framework changes, how proposals are made, and the security-disclosure channel). |
-| Contribution guide | [`amk/CONTRIBUTING.md`](amk/CONTRIBUTING.md) | **Placeholder** — pending decision D-05. |
-| Framework security policy | [`amk/SECURITY.md`](amk/SECURITY.md) | **Placeholder** — pending decision D-05. |
-| Licensing model | [`amk/LICENSING.md`](amk/LICENSING.md) | **Placeholder** — pending decision D-04 (specification text vs. code, and the commercial boundary for forks and implementers). |
-| Specification licence text | [`amk/LICENSE`](amk/LICENSE) | **Placeholder** — pending decision D-04. |
-| Code licence text | [`amk/LICENSE-CODE`](amk/LICENSE-CODE) | **Placeholder** — pending decision D-04. |
-| Commercial boundary | [`amk/COMMERCIAL-BOUNDARY.md`](amk/COMMERCIAL-BOUNDARY.md) | **Placeholder** — pending decision D-04. |
+| Framework governance | [`GOVERNANCE.md`](GOVERNANCE.md) | **Placeholder** — pending decision D-05 (who decides framework changes, how proposals are made, and the security-disclosure channel). |
+| Contribution guide | [`CONTRIBUTING.md`](CONTRIBUTING.md) | **Placeholder** — pending decision D-05. |
+| Framework security policy | [`SECURITY.md`](SECURITY.md) | **Placeholder** — pending decision D-05. |
+| Licensing model | [`amk/governance/licensing.md`](amk/governance/licensing.md) | **Placeholder** — pending decision D-04 (specification text vs. code, and the commercial boundary for forks and implementers). |
+| Specification licence text | [`LICENSE`](LICENSE) | **Placeholder** — pending decision D-04. |
+| Code licence text | [`LICENSES/LICENSE-CODE`](LICENSES/LICENSE-CODE) | **Placeholder** — pending decision D-04. |
+| Commercial boundary | [`amk/governance/commercial-boundary.md`](amk/governance/commercial-boundary.md) | **Placeholder** — pending decision D-04. |
 | Repository & process security model | [`docs/SECURITY.md`](docs/SECURITY.md) | **Published** — covers the build/bridge token model, leak controls and credentials hygiene for this repository. |
 | Pending register (repository work) | [`docs/PENDING-REGISTER.md`](docs/PENDING-REGISTER.md) | **Published** — the operator's list of outstanding repository work. |
 | Operator guide | [`docs/OPERATOR-GUIDE.md`](docs/OPERATOR-GUIDE.md) | **Published** — how the plan and tasks are run in this repository. |
@@ -350,15 +353,16 @@ work is actually done in this repository:
   directly to `main`.
 - **Keep the register current.** If your change affects a repository-level work item, update
   [`docs/PENDING-REGISTER.md`](docs/PENDING-REGISTER.md) in the same pull request.
-- **Do not hand-edit generated files.** The `amk-*-spec-full.md` files are generated by
-  [`amk/scripts/merge_spec.py`](amk/scripts/merge_spec.py) and carry a `GENERATED FILE - DO NOT EDIT.` marker.
+- **Never commit generated files.** The `*-spec-full.md` files are build outputs of
+  [`amk/scripts/build_release.py`](amk/scripts/build_release.py) (via [`merge_spec.py`](amk/scripts/merge_spec.py)) and
+  carry a `GENERATED FILE - DO NOT EDIT.` marker; `.gitignore` excludes them.
 - **Specification changes cite clause IDs.** Requirement identifiers are never reassigned; a withdrawn requirement
   keeps its ID and is marked `RETIRED`.
 
 ## Licence
 
-**No licence has been published for this repository.** [`amk/LICENSE`](amk/LICENSE), [`amk/LICENSE-CODE`](amk/LICENSE-CODE)
-and [`amk/LICENSING.md`](amk/LICENSING.md) are placeholders awaiting decision **D-04**, which will separate the
+**No licence has been published for this repository.** [`LICENSE`](LICENSE), [`LICENSES/LICENSE-CODE`](LICENSES/LICENSE-CODE)
+and [`amk/governance/licensing.md`](amk/governance/licensing.md) are placeholders awaiting decision **D-04**, which will separate the
 licensing of the specification text from the licensing of any code, and define the commercial boundary for forks and
 implementers.
 
@@ -377,6 +381,17 @@ contract.
   be set, pending **P-002**).
 - [`engine/prompts/`](engine/prompts/) — the supervisor and worker prompts.
 - [`engine/tools/plan_tool.py`](engine/tools/plan_tool.py) — plan validation, rendering, ordering and status.
+
+### Specification build and release
+
+`python3 amk/scripts/build_release.py build` regenerates every merged specification and writes the release tree to
+`dist/castiel-v<version>/`, with `release/MANIFEST.json` (version, source commit, generator hashes, per-file hashes)
+and `release/SHA256SUMS`. The output is deterministic. `build --strict` is what `release.yml` runs on a `v*` tag: it
+fails on placeholders, an invalid `VERSION`, a dirty tree or a merge error. `verify <dir>` re-checks a built tree and
+`archive <dir>` writes a deterministic `.tar.gz` with its checksum. Checksums prove integrity only; authenticity comes
+from the detached signature (when a signing key is configured) and the build-provenance attestation. The
+release layout is defined by `build_release.py`; the manifest format by
+[`amk/releases/manifest.schema.json`](amk/releases/manifest.schema.json).
 
 Plan progress is tracked in [`plans/castiel-framework/PLAN.md`](plans/castiel-framework/PLAN.md), which is generated
 and must not be edited by hand.

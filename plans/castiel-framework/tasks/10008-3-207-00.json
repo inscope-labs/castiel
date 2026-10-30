@@ -10,12 +10,12 @@
     "Resolves CNS-O-02, or records a deferral permitted by D-10."
   ],
   "deliverables": [
-    "amk/runtime-system-protocols/verification/README.md"
+    "amk/protocols/verification/README.md"
   ],
   "companions": [],
   "blocked_by": [],
   "spec_refs": [
-    "SCF:runtime-system-protocols/verification",
+    "SCF:protocols/verification",
     "CNS-O-02"
   ],
   "context": [

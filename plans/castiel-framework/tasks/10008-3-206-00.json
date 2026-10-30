@@ -10,12 +10,12 @@
     "Defines failure and retirement of in-flight work when a runtime is removed."
   ],
   "deliverables": [
-    "amk/runtime-system-protocols/execution/README.md"
+    "amk/protocols/execution/README.md"
   ],
   "companions": [],
   "blocked_by": [],
   "spec_refs": [
-    "SCF:runtime-system-protocols/execution",
+    "SCF:protocols/execution",
     "CTR-O-10"
   ],
   "context": [

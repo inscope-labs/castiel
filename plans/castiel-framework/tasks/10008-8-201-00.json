@@ -9,7 +9,7 @@
     "States how new clause IDs and prefixes are allocated."
   ],
   "deliverables": [
-    "amk/GOVERNANCE.md"
+    "GOVERNANCE.md"
   ],
   "companions": [],
   "blocked_by": [
@@ -19,7 +19,7 @@
     }
   ],
   "spec_refs": [
-    "SCF:amk/GOVERNANCE"
+    "SCF:root/GOVERNANCE"
   ],
   "context": [
     {

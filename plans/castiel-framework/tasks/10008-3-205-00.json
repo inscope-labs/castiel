@@ -10,12 +10,12 @@
     "States that other channels exist only as permitted by the kernel operating level."
   ],
   "deliverables": [
-    "amk/runtime-system-protocols/agent-interface/README.md"
+    "amk/protocols/agent-interface/README.md"
   ],
   "companions": [],
   "blocked_by": [],
   "spec_refs": [
-    "SCF:runtime-system-protocols/agent-interface"
+    "SCF:protocols/agent-interface"
   ],
   "context": [
     {

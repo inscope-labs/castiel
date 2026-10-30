@@ -11,12 +11,12 @@
     "Cross-references the authorization and envelope documents rather than restating them."
   ],
   "deliverables": [
-    "amk/runtime-system-protocols/session-launch/README.md"
+    "amk/protocols/session-launch/README.md"
   ],
   "companions": [],
   "blocked_by": [],
   "spec_refs": [
-    "SCF:runtime-system-protocols/session-launch"
+    "SCF:protocols/session-launch"
   ],
   "context": [
     {

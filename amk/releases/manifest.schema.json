@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Castiel release manifest (release/MANIFEST.json)",
+  "type": "object",
+  "required": ["format_version", "name", "version", "suite_version", "source_commit", "generator", "generated", "files"],
+  "additionalProperties": false,
+  "properties": {
+    "format_version": { "const": 1 },
+    "name": { "const": "castiel" },
+    "version": { "type": "string", "description": "Repository release version (VERSION file), or \"unversioned\" for a draft build." },
+    "suite_version": { "type": ["string", "null"], "description": "Suite version declared in amk/VERSION and amk-ssot.md; null when not yet declared." },
+    "source_commit": { "type": ["string", "null"], "pattern": "^[0-9a-f]{40}$", "description": "Git commit the release was built from." },
+    "generator": {
+      "type": "object",
+      "required": ["build_release.py", "merge_spec.py"],
+      "additionalProperties": false,
+      "properties": {
+        "build_release.py": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "merge_spec.py": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "generated": {
+      "type": "array",
+      "description": "Merged specification files and the source directories they were generated from.",
+      "items": {
+        "type": "object",
+        "required": ["output", "source_dir", "files_merged", "merged_content_hash"],
+        "additionalProperties": false,
+        "properties": {
+          "output": { "type": "string" },
+          "source_dir": { "type": "string" },
+          "files_merged": { "type": "integer", "minimum": 1 },
+          "merged_content_hash": { "type": ["string", "null"], "pattern": "^[0-9a-f]{12}$" }
+        }
+      }
+    },
+    "files": {
+      "type": "array",
+      "description": "Every file in the release except release/MANIFEST.json, release/SHA256SUMS and release/SHA256SUMS.sig.",
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256", "size"],
+        "additionalProperties": false,
+        "properties": {
+          "path": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "size": { "type": "integer", "minimum": 0 }
+        }
+      }
+    }
+  }
+}

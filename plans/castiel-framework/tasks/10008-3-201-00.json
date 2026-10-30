@@ -11,12 +11,12 @@
     "Resolves CNS-O-03 and CTR-O-07, or records deferrals permitted by D-10."
   ],
   "deliverables": [
-    "amk/runtime-system-protocols/boot-sequence/README.md"
+    "amk/protocols/boot-sequence/README.md"
   ],
   "companions": [],
   "blocked_by": [],
   "spec_refs": [
-    "SCF:runtime-system-protocols/boot-sequence",
+    "SCF:protocols/boot-sequence",
     "CNS-O-03",
     "CTR-O-07"
   ],

@@ -10,7 +10,7 @@
     "Resolves RTM-O-19, or records a deferral permitted by D-10."
   ],
   "deliverables": [
-    "amk/runtime-system-protocols/version-negotiation/README.md"
+    "amk/protocols/version-negotiation/README.md"
   ],
   "companions": [],
   "blocked_by": [
@@ -20,7 +20,7 @@
     }
   ],
   "spec_refs": [
-    "SCF:runtime-system-protocols/version-negotiation",
+    "SCF:protocols/version-negotiation",
     "RTM-O-19"
   ],
   "context": [

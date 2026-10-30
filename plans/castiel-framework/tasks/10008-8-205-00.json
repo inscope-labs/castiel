@@ -9,7 +9,7 @@
     "Does not give legal advice."
   ],
   "deliverables": [
-    "amk/COMMERCIAL-BOUNDARY.md"
+    "amk/governance/commercial-boundary.md"
   ],
   "companions": [],
   "blocked_by": [
@@ -23,7 +23,7 @@
     }
   ],
   "spec_refs": [
-    "SCF:amk/COMMERCIAL-BOUNDARY"
+    "SCF:governance/commercial-boundary"
   ],
   "context": [
     {

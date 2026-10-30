@@ -10,7 +10,7 @@
     "Resolves CNS-O-10, CNS-O-11, CTR-O-13 and RTM-O-02, or records deferrals permitted by D-10."
   ],
   "deliverables": [
-    "amk/runtime-system-protocols/envelope-model/02-work-and-inclusion-envelopes.md"
+    "amk/protocols/envelope-model/02-work-and-inclusion-envelopes.md"
   ],
   "companions": [],
   "blocked_by": [

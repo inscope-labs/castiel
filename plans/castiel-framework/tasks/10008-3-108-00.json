@@ -10,12 +10,12 @@
     "Is consistent with the policy-engine extension point obligations."
   ],
   "deliverables": [
-    "amk/runtime-system-protocols/policy-expression-and-decision-records/README.md"
+    "amk/protocols/policy-expression-and-decision-records/README.md"
   ],
   "companions": [],
   "blocked_by": [],
   "spec_refs": [
-    "SCF:runtime-system-protocols/policy-expression-and-decision-records"
+    "SCF:protocols/policy-expression-and-decision-records"
   ],
   "context": [
     {

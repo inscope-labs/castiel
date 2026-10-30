@@ -11,8 +11,8 @@
     "Resolves CNS-O-08 and CTR-O-11, or records deferrals permitted by D-10."
   ],
   "deliverables": [
-    "amk/runtime-system-protocols/envelope-model/README.md",
-    "amk/runtime-system-protocols/envelope-model/00-common-fields.md"
+    "amk/protocols/envelope-model/README.md",
+    "amk/protocols/envelope-model/00-common-fields.md"
   ],
   "companions": [],
   "blocked_by": [
@@ -22,7 +22,7 @@
     }
   ],
   "spec_refs": [
-    "SCF:runtime-system-protocols/envelope-model",
+    "SCF:protocols/envelope-model",
     "CNS-O-08",
     "CTR-O-11"
   ],

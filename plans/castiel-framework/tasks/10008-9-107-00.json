@@ -10,7 +10,7 @@
   ],
   "deliverables": [
     "amk/abstract-kernel/README.md",
-    "amk/runtime-system-protocols/README.md",
+    "amk/protocols/README.md",
     "amk/cross-cutting-requirements/README.md",
     "amk/package-framework/README.md"
   ],
@@ -23,7 +23,7 @@
   ],
   "spec_refs": [
     "SCF:abstract-kernel",
-    "SCF:runtime-system-protocols",
+    "SCF:protocols",
     "SCF:cross-cutting-requirements",
     "SCF:package-framework"
   ],

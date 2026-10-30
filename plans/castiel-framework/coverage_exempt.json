@@ -1,3 +1,20 @@
 {
-  "items": []
+  "items": [
+    {
+      "id": "SCF:abstract-kernel/architecture",
+      "reason": "Scaffold added by the release-layout restructure; no task exists yet. The operator decides whether to add one."
+    },
+    {
+      "id": "SCF:abstract-kernel/scope",
+      "reason": "Scaffold added by the release-layout restructure; no task exists yet. The operator decides whether to add one."
+    },
+    {
+      "id": "SCF:abstract-kernel/principles",
+      "reason": "Scaffold added by the release-layout restructure; no task exists yet. The operator decides whether to add one."
+    },
+    {
+      "id": "SCF:releases/provenance",
+      "reason": "Populated by the release process (one record per published release), not by a plan task."
+    }
+  ]
 }

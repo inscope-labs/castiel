@@ -10,12 +10,12 @@
     "Cites the authority and controller clauses it relies on."
   ],
   "deliverables": [
-    "amk/runtime-system-protocols/identity/README.md"
+    "amk/protocols/identity/README.md"
   ],
   "companions": [],
   "blocked_by": [],
   "spec_refs": [
-    "SCF:runtime-system-protocols/identity"
+    "SCF:protocols/identity"
   ],
   "context": [
     {

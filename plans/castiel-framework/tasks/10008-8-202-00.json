@@ -8,7 +8,7 @@
     "Describes how to propose a change, the one-task-one-branch-one-PR rule, the Markdown-only rule and the ID rules, consistent with D-05."
   ],
   "deliverables": [
-    "amk/CONTRIBUTING.md"
+    "CONTRIBUTING.md"
   ],
   "companions": [],
   "blocked_by": [
@@ -22,7 +22,7 @@
     }
   ],
   "spec_refs": [
-    "SCF:amk/CONTRIBUTING"
+    "SCF:root/CONTRIBUTING"
   ],
   "context": [
     {

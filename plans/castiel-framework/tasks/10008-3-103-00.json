@@ -10,7 +10,7 @@
     "Resolves CNS-O-09 and CTR-O-12, or records deferrals permitted by D-10."
   ],
   "deliverables": [
-    "amk/runtime-system-protocols/envelope-model/01-session-envelopes.md"
+    "amk/protocols/envelope-model/01-session-envelopes.md"
   ],
   "companions": [],
   "blocked_by": [

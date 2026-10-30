@@ -9,7 +9,7 @@
     "States what a fork may and may not do."
   ],
   "deliverables": [
-    "amk/LICENSING.md"
+    "amk/governance/licensing.md"
   ],
   "companions": [],
   "blocked_by": [
@@ -19,7 +19,7 @@
     }
   ],
   "spec_refs": [
-    "SCF:amk/LICENSING"
+    "SCF:governance/licensing"
   ],
   "context": [
     {

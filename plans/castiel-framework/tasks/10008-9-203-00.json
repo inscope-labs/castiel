@@ -9,7 +9,7 @@
     "Defines the changelog format for future entries."
   ],
   "deliverables": [
-    "amk/CHANGELOG.md"
+    "CHANGELOG.md"
   ],
   "companions": [],
   "blocked_by": [
@@ -19,7 +19,7 @@
     }
   ],
   "spec_refs": [
-    "SCF:amk/CHANGELOG"
+    "SCF:root/CHANGELOG"
   ],
   "context": [
     {

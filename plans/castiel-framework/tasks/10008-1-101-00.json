@@ -12,7 +12,7 @@
     "Includes at least three worked examples (new clause, retired clause, cross-reference) in plain text."
   ],
   "deliverables": [
-    "amk/abstract-kernel/clause-naming-rules/README.md"
+    "amk/governance/clause-naming-rules.md"
   ],
   "companions": [],
   "blocked_by": [
@@ -22,7 +22,7 @@
     }
   ],
   "spec_refs": [
-    "SCF:abstract-kernel/clause-naming-rules"
+    "SCF:governance/clause-naming-rules"
   ],
   "context": [
     {

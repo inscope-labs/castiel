@@ -11,7 +11,7 @@
     "The scope assumed for this document is stated as a DP item for the operator to ratify."
   ],
   "deliverables": [
-    "amk/CLASSIFICATION.md"
+    "amk/governance/classification.md"
   ],
   "companions": [],
   "blocked_by": [
@@ -21,7 +21,7 @@
     }
   ],
   "spec_refs": [
-    "SCF:amk/CLASSIFICATION"
+    "SCF:governance/classification"
   ],
   "context": [
     {

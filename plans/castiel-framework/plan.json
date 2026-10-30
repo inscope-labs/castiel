@@ -4,7 +4,12 @@
   "plan_number": "10008",
   "deliverable_roots": [
     "amk/",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md",
+    "GOVERNANCE.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "VERSION"
   ],
   "deliverable_patterns": [
     "\\.md$",

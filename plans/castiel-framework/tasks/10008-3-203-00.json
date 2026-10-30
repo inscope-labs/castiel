@@ -11,12 +11,12 @@
     "Resolves CNS-O-05 and CNS-O-06, or records deferrals permitted by D-10."
   ],
   "deliverables": [
-    "amk/runtime-system-protocols/authorization/README.md"
+    "amk/protocols/authorization/README.md"
   ],
   "companions": [],
   "blocked_by": [],
   "spec_refs": [
-    "SCF:runtime-system-protocols/authorization",
+    "SCF:protocols/authorization",
     "CNS-O-05",
     "CNS-O-06"
   ],

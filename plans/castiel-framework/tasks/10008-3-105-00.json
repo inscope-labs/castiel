@@ -10,7 +10,7 @@
     "Resolves CNS-O-01, CNS-O-12, CTR-O-01, CTR-O-14 and CTR-O-15, or records deferrals permitted by D-10."
   ],
   "deliverables": [
-    "amk/runtime-system-protocols/envelope-model/03-catalog-index.md"
+    "amk/protocols/envelope-model/03-catalog-index.md"
   ],
   "companions": [],
   "blocked_by": [

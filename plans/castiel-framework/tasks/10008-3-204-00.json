@@ -10,12 +10,12 @@
     "Defines the cost unit and concurrency limits, resolving CTR-O-09, or records a deferral permitted by D-10."
   ],
   "deliverables": [
-    "amk/runtime-system-protocols/work-order-lifecycle/README.md"
+    "amk/protocols/work-order-lifecycle/README.md"
   ],
   "companions": [],
   "blocked_by": [],
   "spec_refs": [
-    "SCF:runtime-system-protocols/work-order-lifecycle",
+    "SCF:protocols/work-order-lifecycle",
     "CTR-O-09"
   ],
   "context": [

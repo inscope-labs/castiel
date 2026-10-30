@@ -10,7 +10,9 @@
     "Is consistent with the decision recorded in D-06."
   ],
   "deliverables": [
-    "amk/versioning/README.md"
+    "amk/governance/versioning.md",
+    "amk/governance/compatibility.md",
+    "amk/governance/change-control.md"
   ],
   "companions": [],
   "blocked_by": [
@@ -20,7 +22,9 @@
     }
   ],
   "spec_refs": [
-    "SCF:versioning"
+    "SCF:governance/versioning",
+    "SCF:governance/compatibility",
+    "SCF:governance/change-control"
   ],
   "context": [
     {

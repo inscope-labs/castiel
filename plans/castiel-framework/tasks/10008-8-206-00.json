@@ -5,7 +5,7 @@
   "executor": "operator",
   "status": "planned",
   "acceptance": [
-    "The operator places the licence text in amk/LICENSE exactly as chosen in D-04 and records the commit.",
+    "The operator places the licence text in LICENSE exactly as chosen in D-04 and records the commit.",
     "The text matches the explanation in LICENSING.md."
   ],
   "deliverables": [],
@@ -21,7 +21,7 @@
     }
   ],
   "spec_refs": [
-    "SCF:amk/LICENSE"
+    "SCF:root/LICENSE"
   ],
   "context": [],
   "verify": {

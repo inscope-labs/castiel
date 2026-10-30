@@ -4,7 +4,7 @@
       "id": "D-01",
       "title": "Clause-ID prefixes for the framework areas",
       "status": "open",
-      "question": "Which three-letter prefixes identify the abstract-kernel, runtime-system-protocols, cross-cutting-requirements, package-framework, implementation-specification and conformance areas (existing: ATA, CNS, CTR, PMT, RTM, SSOT)?",
+      "question": "Which three-letter prefixes identify the abstract-kernel, protocols, cross-cutting-requirements, package-framework, implementation-specification and conformance areas (existing: ATA, CNS, CTR, PMT, RTM, SSOT)?",
       "proposal": "KRN, PRT, XCR, PKG, IMP, CNF"
     },
     {

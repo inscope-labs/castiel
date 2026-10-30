@@ -10,12 +10,12 @@
     "Resolves O-ATA-09 at protocol level or records a deferral permitted by D-10."
   ],
   "deliverables": [
-    "amk/runtime-system-protocols/evidence/README.md"
+    "amk/protocols/evidence/README.md"
   ],
   "companions": [],
   "blocked_by": [],
   "spec_refs": [
-    "SCF:runtime-system-protocols/evidence",
+    "SCF:protocols/evidence",
     "O-ATA-09"
   ],
   "context": [

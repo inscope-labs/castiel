@@ -29,7 +29,7 @@ specifications themselves belong in the specifications' own open-item lists, not
 |---|---|---|---|---|
 | P-001 | Merge the castiel-framework plan and the `engine.json` guide | IN PROGRESS | unassigned | operator review of PR #3 |
 | P-002 | Configure `engine/engine.json` and the operator config for this repository | OPEN | unassigned | none |
-| P-003 | Repair the merge-spec workflows (paths point at a directory that does not exist) | OPEN | unassigned | none |
+| P-003 | Repair the merge-spec workflows (paths point at a directory that does not exist) | IN PROGRESS | unassigned | none |
 | P-004 | Execute plan 10008 (castiel-framework) | BLOCKED | unassigned | P-001, P-002, decisions D-01 to D-11 as each task needs them |
 | P-005 | Confirm the repository setting the integration workflow needs | OPEN | unassigned | none |
 | P-006 | Operator bridge (`cbridge`) cannot be used with a single public repository | BLOCKED | unassigned | build-engine register entry P-001 |
@@ -67,7 +67,10 @@ except where the `Request` line says otherwise. Confirm or drop each one.
 
 - **Request:** Derived. The plan records the same fault as its decision D-03 and proposes "fix the paths by hand outside
   the plan, then regenerate", because workflows and tooling are code and the plan is Markdown-only.
-- **Status:** OPEN
+- **Status:** IN PROGRESS — branch `restructure/release-layout`: the `merge-spec*.yml` workflows are retired and replaced
+  by `spec-build.yml` and `release.yml`; the `*-spec-full.md` files are no longer committed. Close this entry when that
+  pull request is merged and a `spec-build` run has passed on `main`. Plan decision D-03 is still unresolved in
+  `decisions.json` and is for the operator to resolve.
 - **Evidence:** the five caller workflows (`merge-spec-amk-authority`, `-console`, `-controller`, `-prompt`,
   `-runtime`) pass `spec_dir: specs/core/amk-<name>`, and `merge-spec.yml` rejects anything not under
   `specs/core/amk-*`. There is no `specs/` directory; the component specs live under `amk/components/amk-<name>/`, where

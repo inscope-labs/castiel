@@ -10,12 +10,12 @@
     "States what detail an error may disclose."
   ],
   "deliverables": [
-    "amk/runtime-system-protocols/error-handling/README.md"
+    "amk/protocols/error-handling/README.md"
   ],
   "companions": [],
   "blocked_by": [],
   "spec_refs": [
-    "SCF:runtime-system-protocols/error-handling"
+    "SCF:protocols/error-handling"
   ],
   "context": [
     {

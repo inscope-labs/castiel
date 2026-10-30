@@ -10,7 +10,8 @@
   ],
   "deliverables": [
     "amk/VERSION",
-    "amk/COMPLIANCE_MAPPINGS_VERSION"
+    "amk/reference-material/compliance-mappings/COMPLIANCE_MAPPINGS_VERSION",
+    "VERSION"
   ],
   "companions": [],
   "blocked_by": [
@@ -21,7 +22,8 @@
   ],
   "spec_refs": [
     "SCF:amk/VERSION",
-    "SCF:amk/COMPLIANCE_MAPPINGS_VERSION"
+    "SCF:reference-material/compliance-mappings/COMPLIANCE_MAPPINGS_VERSION",
+    "SCF:root/VERSION"
   ],
   "context": [
     {

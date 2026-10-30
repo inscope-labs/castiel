@@ -13,7 +13,7 @@
     "amk/conformance/README.md",
     "amk/reference-material/README.md",
     "amk/components/README.md",
-    "amk/schemas/README.md"
+    "amk/protocols/schemas/README.md"
   ],
   "companions": [],
   "blocked_by": [
@@ -27,7 +27,7 @@
     "SCF:conformance",
     "SCF:reference-material",
     "SCF:components",
-    "SCF:schemas"
+    "SCF:protocols/schemas"
   ],
   "context": [
     {

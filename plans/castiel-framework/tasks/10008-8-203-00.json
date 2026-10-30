@@ -9,7 +9,7 @@
     "Contains no contact detail that has not been supplied by the operator."
   ],
   "deliverables": [
-    "amk/SECURITY.md"
+    "SECURITY.md"
   ],
   "companions": [],
   "blocked_by": [
@@ -19,7 +19,7 @@
     }
   ],
   "spec_refs": [
-    "SCF:amk/SECURITY"
+    "SCF:root/SECURITY"
   ],
   "context": [
     {
